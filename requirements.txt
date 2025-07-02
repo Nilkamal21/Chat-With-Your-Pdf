@@ -1,0 +1,16 @@
+# Core packages
+streamlit==1.35.0
+python-dotenv==1.0.1
+
+# LangChain ecosystem
+langchain==0.1.20
+langchain-community==0.0.32
+langchain-groq==0.0.5
+
+# Document processing
+PyPDF2==3.0.1
+
+# Embeddings & Vector store
+chromadb==0.5.0
+sentence-transformers==2.6.1
+

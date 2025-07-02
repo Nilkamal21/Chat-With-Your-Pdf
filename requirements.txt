@@ -2,7 +2,7 @@ streamlit
 langchain==0.2.7
 langchain-core==0.2.24
 langchain-ollama==0.1.7
-langchain-community  
+langchain-community
 chromadb
 ollama
 pydantic==2.7.1

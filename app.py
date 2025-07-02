@@ -5,21 +5,12 @@ from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain.embeddings import HuggingFaceEmbeddings
 from langchain.vectorstores import Chroma
 from langchain.chains import RetrievalQA
-from langchain_groq import ChatGroq
+from langchain_ollama import ChatOllama
 
-
-import os
-from dotenv import load_dotenv
-
-load_dotenv()  # loads your .env into os.environ
-
-api_key = os.environ.get("GROQ_API_KEY")
-if not api_key:
-    raise EnvironmentError("❌ GROQ_API_KEY not found in environment or .env file!")
-
-from langchain_groq import ChatGroq
-
-llm = ChatGroq(model="llama3-8b-8192")  # will automatically pick up GROQ_API_KEY
+llm = ChatOllama(
+    model="deepseek-r1:1.5b",  # your Ollama model
+    
+)
 
 # Initialize Hugging Face embeddings (open-source)
 embeddings = HuggingFaceEmbeddings(model_name="sentence-transformers/all-MiniLM-L6-v2")

@@ -1,16 +1,9 @@
-# Core LangChain packages
+streamlit
 langchain==0.1.20
+langchain-core==0.1.52
 langchain-community==0.0.28
-langchain-core==0.1.48
-langchain-ollama==0.0.6
-
-# Pydantic (for compatibility with latest LangChain)
+langchain-ollama==0.1.1
+ollama
 pydantic==2.7.1
-
-# Ollama Python client
-ollama==0.1.7
-
-# Embedding + vector store dependencies (e.g., FAISS or other)
-faiss-cpu==1.8.0
-
-PyPDF2==3.0.1
+faiss-cpu
+tiktoken

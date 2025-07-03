@@ -54,8 +54,7 @@ if uploaded_file:
     docs = splitter.split_documents(pages)
 
     # Step 3: Create new vector store
-    vectordb = Chroma.from_documents(docs, embeddings, persist_directory="./db")
-    vectordb.persist()
+    vectordb = Chroma.from_documents(docs, embeddings)
     retriever = vectordb.as_retriever(search_kwargs={"k": 4})
 
     # Step 4: Set up RAG chain

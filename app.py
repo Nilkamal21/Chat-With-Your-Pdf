@@ -1,3 +1,7 @@
+import sys
+import pysqlite3
+sys.modules["sqlite3"] = pysqlite3
+
 import os
 import shutil
 import streamlit as st
@@ -74,6 +78,6 @@ if uploaded_file:
                 result = qa({"query": question})
                 st.write("**Answer:**", result["result"])
 
-                # Optionally show sources (comment out if not needed)
+                # Optionally show sources (uncomment if needed)
                 # for doc in result["source_documents"]:
                 #     st.write(f"📄 **Source page:**\n{doc.page_content[:500]}...")

@@ -1,4 +1,5 @@
 import sys
+import uuid
 import pysqlite3
 sys.modules["sqlite3"] = pysqlite3
 
@@ -54,7 +55,13 @@ if uploaded_file:
     docs = splitter.split_documents(pages)
 
     # Step 3: Create new vector store
-    vectordb = Chroma.from_documents(docs, embeddings)
+    unique_collection_name = f"pdf_{uuid.uuid4().hex}"
+    vectordb = Chroma.from_documents(
+        docs,
+        embeddings,
+        collection_name=unique_collection_name,  # ✅ guarantees no clash between uploads
+        # persist_directory="./db"  # you can remove or keep based on whether you want disk persistence
+    )
     retriever = vectordb.as_retriever(search_kwargs={"k": 4})
 
     # Step 4: Set up RAG chain

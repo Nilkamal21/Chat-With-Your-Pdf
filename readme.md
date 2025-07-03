@@ -7,6 +7,10 @@ This project is an **end-to-end Retrieval-Augmented Generation (RAG) chatbot** b
 ✅ Streamlit for a simple, interactive web UI.
 
 ---
+🚀 Live Demo
+https://chat-with-your-pdf-o5tvvas8zmufpttdxz7bc4.streamlit.app/
+
+---
 
 ## 🚀 Features
 
